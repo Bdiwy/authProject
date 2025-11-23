@@ -28,7 +28,6 @@ public class AccountController : Controller
 
         if (result.Succeeded)
         {
-            // تسجيل الدخول مباشرة بعد التسجيل (اختياري)
             await _signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("Index", "Home");
         }
