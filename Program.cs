@@ -17,6 +17,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
 // MVC
 builder.Services.AddControllersWithViews();
 
